@@ -9,6 +9,8 @@
 BLEService 		  *SERVICE;
 BLECharacteristic *LUMINOSITY_CHARACTERISTIC;
 
+const int LIGHT_SENSOR_PIN = 36;
+
 
 void SetupBLE();
 void SetLuminosityCharacteristicOnBleDevice(const int luminosity);
@@ -27,7 +29,7 @@ void setup()
 
 void loop()
 {
-	int luminosity = analogRead(36);
+	int luminosity = analogRead(LIGHT_SENSOR_PIN);
 	SetLuminosityCharacteristicOnBleDevice(luminosity);
 	delay(500);
 }
